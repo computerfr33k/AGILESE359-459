@@ -10,7 +10,7 @@ public class CoordinatePoint extends Point {
         super(x, y);
     }
     
-    /*
+    /**
      * It produce a unique integer id to be store it and ask back in the HashMap for the specific cell
      * @ return integer
      */
@@ -19,6 +19,7 @@ public class CoordinatePoint extends Point {
     	int hash = 87 + (7 + this.x);
     	    hash = 87 * (hash + this.y);
     	
-    	    return hash;	
+    	    // it will be unique for 32 bit hashcode we can do some research on this
+    	    return String.valueOf(hash).hashCode();	
     }
 }
